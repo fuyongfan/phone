@@ -36,7 +36,6 @@ function touch(e) {
             var timer2 = window.setTimeout(function dis() {
                 callback && callback();
                 contents.style.display = 'block';
-                contents.className = "animated fadeIn";
                 page1();
                 window.clearInterval(timer2);
             }, 1000);
@@ -129,8 +128,8 @@ function slidePage() {
         if (this.flag) {
             oLis[this.prevsIndex].style.webkitTransform = "translate(0,0)";
             oLis[this.index].style.webkitTransform = 'translate(0,0) scale(' + (1 - step) + ')';
-            oLis[this.index].style.webkitTransition = "0.7s";
-            oLis[this.prevsIndex].style.webkitTransition = "0.7s";
+            oLis[this.index].style.webkitTransition = "0.3s";
+            oLis[this.prevsIndex].style.webkitTransition = "0.3s";
             oLis[this.prevsIndex].addEventListener("webkitTransitionEnd", function () {
                 this.style.webkitTransition = "";
             });

@@ -224,7 +224,6 @@ html, body {
     bottom: 70px;
     animation: 1s infinite arrMove;
 }
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
