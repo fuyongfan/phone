@@ -1,0 +1,265 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#main {
+    width: 640px;
+    height: 1008px;
+    position: absolute;
+    left: 50%;
+    margin-left: -320px;
+    top: 0;
+    overflow: hidden;
+    transform-origin: top;
+    -webkit-transform-origin: top;
+}
+
+#loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url("../image/index.jpg") no-repeat;
+}
+
+.loading {
+    animation: .5s fadeOut 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    display: none;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#main > li {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    display: none;
+    overflow: hidden;
+}
+#main #first {
+    display: block;
+    z-index: 10;
+}
+
+#loading p {
+    position: absolute;
+    top: 34%;
+    left: 42%;
+    overflow: hidden;
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    display: none;
+}
+
+.processBox {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    cursor: pointer;
+}
+
+.process {
+    width: 260px;
+    height: 260px;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    display: none;
+}
+
+#contents {
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    display: none;
+}
+
+#eye {
+    width: 338px;
+    height: 219px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    background-size: cover;
+    transform: scale(1.3);
+    opacity: 0;
+}
+
+.eye {
+    animation: 3s fadeOut 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.me {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 7%;
+    left: 35%;
+    transform: scale(1.2);
+}
+
+#flower {
+    width: 391px;
+    height: 220px;
+    position: absolute;
+    top: 16%;
+    left: 35%;
+    transform: scale(2.5);
+    opacity: 0;
+}
+
+.flower {
+    animation: 2s fadeIn 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.bg {
+    overflow: hidden;
+}
+
+#font {
+    box-sizing: border-box;
+    color: rgb(103, 103, 103);
+    font-size: 50px;
+    font-family: zhanku_gdh;
+    font-weight: 300;
+    line-height: 24px;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    opacity: 0;
+}
+
+.lazy {
+    animation: 1s fadeIn 0s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#p1_bg {
+    width: 185px;
+    height: 143px;
+    position: absolute;
+    bottom: 17%;
+    right: 0;
+    z-index: 2;
+    transform: scale(2);
+    opacity: 0;
+}
+
+#contents #list {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 43%;
+    left: 30%;
+    opacity: 1;
+    z-index: 200;
+}
+
+#list li {
+    list-style: none;
+    padding: 20px;
+}
+
+#list .left img {
+    width: 40px;
+    height: 40px;
+    float: left;
+    left: 200px;
+}
+
+#list .right {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    font-family: '微软雅黑', 'Microsoft Yahei', Simsun, SimHei;
+}
+
+.p1_arr {
+    display: block;
+    width: 90px;
+    height: 52px;
+    z-index: 20;
+    position: absolute;
+    left: 50%;
+    margin-left: -45px;
+    bottom: 70px;
+    animation: 1s infinite arrMove;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes arrMove {
+    0% {
+        transform: translateY(60px);
+        opacity: 0
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 0.8
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes arrMove {
+    0% {
+        transform: translateY(60px);
+        opacity: 0
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 0.8
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0
+    }
+}
+
+.zIndex {
+    z-index: 100;
+}
