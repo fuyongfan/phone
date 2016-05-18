@@ -6,75 +6,342 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title></title>
     <link rel="stylesheet" href="css/animate.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #main {
+            width: 640px;
+            height: 1008px;
+            position: absolute;
+            left: 50%;
+            margin-left: -320px;
+            top: 0;
+            overflow: hidden;
+            transform-origin: top;
+            -webkit-transform-origin: top;
+        }
+
+        #loading {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 10;
+            background: url("image/index.jpg") no-repeat;
+            opacity: 1;
+            /*display: none;*/
+        }
+
+        #loading p {
+            position: absolute;
+            top: 34%;
+            left: 42%;
+            overflow: hidden;
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            visibility: hidden;
+        }
+
+        .processBox {
+            width: 260px;
+            height: 260px;
+            position: absolute;
+            top: 40%;
+            left: 30%;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .process {
+            width: 260px;
+            height: 260px;
+            position: absolute;
+            top: 60%;
+            left: 30%;
+            visibility: hidden;
+        }
+
+        #contents {
+            width: 100%;
+            height: 100%;
+            background: white;
+            position: absolute;
+            z-index: 9;
+        }
+
+        .eye {
+            width: 451px;
+            height: 701px;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            background-size: cover;
+            transform: scale(1.3);
+        }
+
+        .me {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 7%;
+            left: 35%;
+            transform: scale(1.2);
+            z-index: 20;
+        }
+
+        #flower {
+            width: 391px;
+            height: 220px;
+            position: absolute;
+            top: 16%;
+            left: 20%;
+            transform: scale(2.5);
+            opacity: 0;
+            z-index: 50;
+        }
+
+        .font {
+            box-sizing: border-box;
+            color: rgb(103, 103, 103);
+            font-size: 50px;
+            font-family: zhanku_gdh;
+            font-weight: 300;
+            line-height: 24px;
+            position: absolute;
+            top: 35%;
+            left: 15%;
+            opacity: 0;
+            z-index: 50;
+        }
+
+        .p1_bg {
+            width: 500px;
+            height: 689px;
+            position: absolute;
+            bottom: 17%;
+            right: 0;
+            z-index: 2;
+            transform: scale(2);
+            opacity: 0;
+        }
+
+        #list {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 43%;
+            left: 30%;
+            opacity: 1;
+            z-index: 70;
+        }
+
+        #list li {
+            list-style: none;
+            padding: 20px;
+        }
+
+        #list .left img {
+            width: 40px;
+            height: 40px;
+            float: left;
+            left: 200px;
+            opacity: 0;
+
+        }
+
+        #list .right {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 30px;
+            font-family: '微软雅黑', 'Microsoft Yahei', Simsun, SimHei;
+            opacity: 0;
+        }
+
+        .p1_arr {
+            display: block;
+            width: 90px;
+            height: 52px;
+            z-index: 20;
+            position: absolute;
+            left: 50%;
+            margin-left: -45px;
+            bottom: 70px;
+            animation: 1s infinite arrMove;
+        }
+
+        @keyframes arrMove {
+            0% {
+                transform: translateY(60px);
+                opacity: 0
+            }
+            50% {
+                transform: translateY(30px);
+                opacity: 0.8
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes arrMove {
+            0% {
+                transform: translateY(60px);
+                opacity: 0
+            }
+            50% {
+                transform: translateY(30px);
+                opacity: 0.8
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 0
+            }
+        }
+
+
+
+    </style>
 </head>
 <body>
-<ul id="main">
-    <li id="first">
-        <!--首页扫描加载-->
-        <div id="loading">
-            <p id="scanning">扫描中...</p>
-            <div class="processBox">
-                <img src="image/zhiwen2.png" alt=""/>
-            </div>
-            <div class="process" id="process">
-                <img id="img" src="image/finger_line1.png" alt=""/>
-            </div>
+<div id="main">
+    <!--首页扫描加载-->
+    <div id="loading">
+        <p id="scanning">扫描中...</p>
+
+        <div class="processBox">
+            <img src="image/zhiwen2.png" alt=""/>
         </div>
-        <!--基本信息-->
-        <div id="contents">
-            <div id="eye">
-                <img src="image/eye1.jpg" alt="" class="me_img"/>
-            </div>
-            <div id="me" class="me">
-                <img src="image/me.png" alt="" class="me_img animated zoomIn"/>
-            </div>
-            <div id="flower">
-                <img id="" src="image/flower.jpg" alt=""/>
-            </div>
-            <div class="bg">
-                <span id="font">Resume introduces</span>
-                <img id="p1_bg" src="image/p1_bg.png"/>
-            </div>
-            <ul id="list">
-                <li>
-                    <div class="left"><img src="image/list.png"/></div>
-                    <div class="right">基本资料</div>
-                </li>
-                <li>
-                    <div class="left"><img src="image/list.png"/></div>
-                    <div class="right">工作经验</div>
-                </li>
-                <li>
-                    <div class="left"><img src="image/list.png"/></div>
-                    <div class="right">技能展示</div>
-                </li>
-                <li>
-                    <div class="left"><img src="image/list.png"/></div>
-                    <div class="right">个人介绍</div>
-                </li>
-                <li>
-                    <div class="left"><img src="image/list.png"/></div>
-                    <div class="right">谢谢观赏</div>
-                </li>
-            </ul>
-            <img src="image/arr.png" alt="" class="p1_arr"/>
+        <div class="process" id="process">
+            <img src="image/finger_line1.png" alt=""/>
         </div>
-    </li>
-    <li>
-        <img src="image/index.jpg" alt=""/>
-    </li>
-    <li>
-        <img src="image/index.jpg" alt=""/>
-    </li>
-    <li>
-        <img src="image/index.jpg" alt=""/>
-    </li>
-</ul>
+    </div>
+
+    <!--基本信息-->
+
+    <div id="contents">
+        <div id="eye" class="eye">
+            <img src="image/eye1.jpg" alt="" class="me_img"/>
+        </div>
+        <div id="me" class="me">
+            <img src="image/me.png" alt="" class="me_img animated zoomIn"/>
+        </div>
+        <div id="flower">
+            <img src="image/flower.jpg" alt=""/>
+        </div>
+        <div class="bg">
+            <span class="font" id="font">Resume introduces</span>
+            <img class="p1_bg" src="image/p1_bg.png"/>
+        </div>
+        <ul id="list">
+            <li>
+                <div class="left"><img src="image/list.png"/></div>
+                <div class="right">基本资料</div>
+            </li>
+            <li>
+                <div class="left"><img src="image/list.png"/></div>
+                <div class="right">工作经验</div>
+            </li>
+            <li>
+                <div class="left"><img src="image/list.png"/></div>
+                <div class="right">技能展示</div>
+            </li>
+            <li>
+                <div class="left"><img src="image/list.png"/></div>
+                <div class="right">个人介绍</div>
+            </li>
+            <li>
+                <div class="left"><img src="image/list.png"/></div>
+                <div class="right">谢谢观赏</div>
+            </li>
+        </ul>
+        <img src="image/arr.png" alt="" class="p1_arr"/>
+    </div>
+</div>
 
 </body>
-<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/utils.js"></script>
 <script type="text/javascript" src="js/tween.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    function getEle(ele) {
+        return document.querySelector(ele);
+    }
+    var main = getEle("#main");
+    var winW = window.innerWidth;
+    var winH = window.innerHeight;
+    var desW = 640;
+    var desH = 1008;
+    if (winW / winH < desW / desH) {
+        main.style.webkitTransform = "scale(" + winH / desH + ")";
+    } else {
+        main.style.webkitTransform = "scale(" + winW / desW + ")";
+    }
+
+    //1、首页扫描加载
+    var load = getEle("#loading");
+    var processBox = getEle(".processBox");
+    var process = getEle("#process");
+    var scanning = getEle("#scanning");
+    function loading() {
+        processBox.addEventListener("touchstart", touch, false);
+    }
+    function touch(e) {
+        var target = e.target;
+        if (target.parentNode.className === "processBox") {
+            window.setTimeout(function () {
+                scanning.innerHTML = "扫描成功！";
+                zhufengAnimate(load, {opacity: 0}, 1000);
+                page1();
+            }, 1000);
+            process.style.visibility = "visible";
+            process.style.webkitTransform = "translate(0, -305px)";
+            process.style.webkitTransition = "1s";
+            scanning.style.visibility = "visible";
+        }
+    }
+    loading();
+
+    //基本信息
+    function page1() {
+        var eye = getEle("#eye");
+        var font = getEle("#font");
+        var flower = getEle("#flower");
+        var p1_bg = getEle(".p1_bg");
+        var timer = window.setTimeout(function () {
+            zhufengAnimate(eye, {opacity: 0}, 3000);
+            zhufengAnimate(p1_bg, {opacity: 1}, 1000);
+            zhufengAnimate(font, {opacity: 1}, 1000);
+            zhufengAnimate(flower, {opacity: 1}, 2000);
+            list();
+        }, 1000);
+    }
+    function list() {
+        var left = document.querySelectorAll(".left>img");
+        var right = document.querySelectorAll(".right");
+        var index = 0;
+        var timer1 = window.setInterval(function () {
+            zhufengAnimate(left[index], {opacity: 1}, 1000);
+            zhufengAnimate(right[index], {opacity: 1}, 1000);
+            index++;
+            if (index >= left.length) {
+                window.clearInterval(timer1);
+            }
+        }, 1000)
+    }
+
+
+
+
+</script>
 </html>
