@@ -29,7 +29,7 @@ function touch(e) {
         process.style.display = 'block';
         function first(callback) {
             var timer1 = window.setTimeout(function lazy() {
-                process.style.webkitTransform = 'translate(0,-350px)';
+                process.style.webkitTransform = 'translate(0,-300px)';
                 process.style.webkitTransition = "1s";
                 window.clearInterval(timer1);
             }, 0);
@@ -38,7 +38,7 @@ function touch(e) {
                 contents.style.display = 'block';
                 page1();
                 window.clearInterval(timer2);
-            }, 1000);
+            }, 800);
             var timer3 = window.setTimeout(function () {
                 $('.homePage').remove();
                 window.clearInterval(timer3);
@@ -67,19 +67,19 @@ function page1() {
         font.className = 'lazy';
         flower.className = 'flower';
         list();
-    }, 1000);
+    }, 800);
 }
 function list() {
     var list = document.getElementById('list');
     var oLs = list.getElementsByTagName('li');
     var index = 0;
     var timer1 = window.setInterval(function () {
-        zhufengAnimate(oLs[index], {opacity: 1}, 1000);
+        zhufengAnimate(oLs[index], {opacity: 1},300);
         index++;
         if (index >= oLs.length) {
             window.clearInterval(timer1);
         }
-    }, 1000)
+    }, 700)
 }
 function slidePage() {
     var step = 1 / 2;
